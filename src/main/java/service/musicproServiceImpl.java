@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dao.musicproDao;
+import model.Producto;
 import model.Usuario;
 
 @Service
@@ -51,6 +52,45 @@ public class musicproServiceImpl implements musicproService {
 	public Usuario buscarUsuario(int idUser) {
 		// TODO Auto-generated method stub
 		return dao.recuperarUsuario(idUser);
+	}
+
+	@Override
+	public boolean agregarProducto(Producto producto) {
+		//añadir producto si no existe
+		if (dao.recuperarProducto(producto.getId()) == null) {
+			dao.agregarProducto(producto);
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public List<Producto> recuperarProductos() {
+		// TODO Auto-generated method stub
+		return dao.devolverProductos();
+	}
+
+	@Override
+	public void actualizarProducto(Producto producto) {
+		if (dao.recuperarProducto(producto.getId()) != null) {
+			dao.actualizarProducto(producto);
+		}
+		
+	}
+
+	@Override
+	public boolean eliminarProducto(int id) {
+		if (dao.recuperarProducto(id) != null) {
+			dao.eliminarProducto(id);
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public Producto buscarProducto(int id) {
+		// TODO Auto-generated method stub
+		return dao.recuperarProducto(id);
 	}
 	
 

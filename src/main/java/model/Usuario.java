@@ -17,14 +17,14 @@ public class Usuario implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_user")
 	private int idUser;
+	
+	private String nombre;
 
 	private String apellido;
 
+	private String email;
+
 	private String contrasena;
-
-	private String correo;
-
-	private String nombre;
 
 	private String rut;
 
@@ -58,12 +58,12 @@ public class Usuario implements Serializable {
 		this.contrasena = contrasena;
 	}
 
-	public String getCorreo() {
-		return this.correo;
+	public String getemail() {
+		return this.email;
 	}
 
-	public void setCorreo(String correo) {
-		this.correo = correo;
+	public void setemail(String email) {
+		this.email = email;
 	}
 
 	public String getNombre() {

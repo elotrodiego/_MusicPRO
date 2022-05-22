@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import model.Usuario;
 
-public interface musicproJpaSpring extends JpaRepository<Usuario,Integer>{
+public interface UsuarioJpaSpring extends JpaRepository<Usuario,Integer>{
 	/*Usuario findById(String correo);
 	@Transactional
 	@Modifying

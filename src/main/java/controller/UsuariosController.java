@@ -34,6 +34,7 @@ public class UsuariosController {
 
 	@PostMapping(value = "usuario", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.TEXT_PLAIN_VALUE)
 	public String guardarContacto(@RequestBody Usuario usuario) {
+		System.out.println("HOLA");
 		return String.valueOf(service.agregarUsuario(usuario));
 	}
 
